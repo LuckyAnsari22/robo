@@ -1,0 +1,412 @@
+#main-content{
+    display: none;
+
+}
+.preloader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #292929;
+  padding: 20px;
+  border-radius: 10px;
+  z-index: 1000;
+  width: 100%;
+  height: 100vh;
+}
+.preloader::before{
+    content: "";
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 10px solid #292929;
+    border-top: 10px solid #f4f4f4;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin{
+    0% {
+        transform: rotate(0deg);
+
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+
+
+:root {
+    --primary-color: #292929;
+    --secondary-color: #333;
+    --background-color: #f4f4f4;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    color: #f4f4f4;
+    line-height: 1.6;
+    background-color: var(--primary-color);
+    padding: 0;
+}
+.loading-text {
+  position: relative;
+  font-size: 3em;
+  color: #f4f4f4;
+  font-weight: bold;
+  margin-top: 10px;
+  z-index: 1;
+  animation: pulse 1s infinite;
+  text-align: center;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.main-header {
+    background-color: var(--secondary-color);
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.main-header h1 {
+    font-size: 2.5em;
+    color: var(--background-color);
+}
+
+.hero-section {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    color: #f4f4f4;
+}
+
+.hero-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.hero-section p {
+    font-size: 1.2em;
+    margin-bottom: 0;
+}
+
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-align: center;
+    color: var(--background-color);
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+.subordinate-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.team-member, .subordinate-member {
+    display: flex;
+    align-items: center;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.team-member:hover, .subordinate-member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 15px rgba(77, 186, 210, 0.5);
+}
+
+img {
+    width: 160px;
+    height: 200px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.member-details {
+    margin-left: 20px;
+    flex-grow: 1;
+}
+
+.member-details h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #f4f4f4;
+}
+
+.member-details p {
+    font-size: 1em;
+    color: #ccc;
+}
+
+footer {
+    background-color: var(--secondary-color);
+    padding: 20px;
+    text-align: center;
+    margin-top: 50px;
+    color: #f4f4f4;
+}
+
+footer a {
+    color: var(--background-color);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 1148px) {
+    .subordinate-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .team-member, .subordinate-member {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .member-details {
+        margin-left: 0;
+        margin-top: 15px;
+    }
+
+    .subordinate-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .main-header h1 {
+        font-size: 2em;
+    }
+
+    .hero-section h2 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    .team-grid, .subordinate-grid {
+        grid-template-columns: 1fr;
+    }
+}
+.logo {
+    width: 64px;
+    height: 64px;
+    padding-left: 0;
+    object-fit: cover;
+}
+/* From Uiverse.io by Subaashbala */ 
+.modelViewPort {
+    /* The black circle background around the model*/
+    perspective: 1000px;
+    width: 20rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #292929;
+    overflow: hidden;
+  }
+  .eva {
+    --EVA-ROTATION-DURATION: 4s;
+    transform-style: preserve-3d;
+    animation: rotateRight var(--EVA-ROTATION-DURATION) linear infinite alternate;
+  }
+  .head {
+    position: relative;
+    width: 6rem;
+    height: 4rem;
+    border-radius: 48% 53% 45% 55% / 79% 79% 20% 22%;
+    background: linear-gradient(to right, white 45%, gray);
+  }
+  .eyeChamber {
+    width: 4.5rem;
+    height: 2.75rem;
+    position: relative;
+    left: 50%;
+    top: 55%;
+    border-radius: 45% 53% 45% 48% / 62% 59% 35% 34%;
+    background-color: #0c203c;
+    box-shadow: 0px 0px 2px 2px white, inset 0px 0px 0px 2px black;
+    transform: translate(-50%, -50%);
+    animation: moveRight var(--EVA-ROTATION-DURATION) linear infinite alternate;
+  }
+  .eye {
+    width: 1.2rem;
+    height: 1.5rem;
+    position: absolute;
+    border-radius: 50%;
+  }
+  .eye:first-child {
+    left: 12px;
+    top: 50%;
+    background: repeating-linear-gradient(
+      65deg,
+      #9bdaeb 0px,
+      #9bdaeb 1px,
+      white 2px
+    );
+    box-shadow: inset 0px 0px 5px #04b8d5, 0px 0px 15px 1px #0bdaeb;
+    transform: translate(0, -50%) rotate(-65deg);
+  }
+  .eye:nth-child(2) {
+    right: 12px;
+    top: 50%;
+    background: repeating-linear-gradient(
+      -65deg,
+      #9bdaeb 0px,
+      #9bdaeb 1px,
+      white 2px
+    );
+    box-shadow: inset 0px 0px 5px #04b8d5, 0px 0px 15px 1px #0bdaeb;
+    transform: translate(0, -50%) rotate(65deg);
+  }
+  .body {
+    width: 6rem;
+    height: 8rem;
+    position: relative;
+    margin-block-start: 0.25rem;
+    border-radius: 47% 53% 45% 55% / 12% 9% 90% 88%;
+    background: linear-gradient(to right, white 35%, gray);
+  }
+  .hand {
+    position: absolute;
+    left: -1.5rem;
+    top: 0.75rem;
+    width: 2rem;
+    height: 5.5rem;
+    border-radius: 40%;
+    background: linear-gradient(to left, white 15%, gray);
+    box-shadow: 5px 0px 5px rgba(0, 0, 0, 0.25);
+    transform: rotateY(55deg) rotateZ(10deg);
+  }
+  .hand:first-child {
+    animation: compensateRotation var(--EVA-ROTATION-DURATION) linear infinite
+      alternate;
+  }
+  .hand:nth-child(2) {
+    left: 92%;
+    background: linear-gradient(to right, white 15%, gray);
+    transform: rotateY(55deg) rotateZ(-10deg);
+    animation: compensateRotationRight var(--EVA-ROTATION-DURATION) linear
+      infinite alternate;
+  }
+  .scannerThing {
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: 60%;
+    top: 10%;
+    border-top: 180px solid #9bdaeb;
+    border-left: 250px solid transparent;
+    border-right: 250px solid transparent;
+    transform-origin: top left;
+    mask: linear-gradient(to right, white, transparent 35%);
+    animation: glow 2s cubic-bezier(0.86, 0, 0.07, 1) infinite;
+  }
+  .scannerOrigin {
+    position: absolute;
+    width: 8px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    left: 60%;
+    top: 10%;
+    background: #9bdaeb;
+    box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.5);
+    animation: moveRight var(--EVA-ROTATION-DURATION) linear infinite;
+  }
+  @keyframes rotateRight {
+    from {
+      transform: rotateY(0deg);
+    }
+    to {
+      transform: rotateY(25deg);
+    }
+  }
+  @keyframes moveRight {
+    from {
+      transform: translate(-50%, -50%);
+    }
+    to {
+      transform: translate(-40%, -50%);
+    }
+  }
+  @keyframes compensateRotation {
+    from {
+      transform: rotateY(55deg) rotateZ(10deg);
+    }
+    to {
+      transform: rotatey(30deg) rotateZ(10deg);
+    }
+  }
+  @keyframes compensateRotationRight {
+    from {
+      transform: rotateY(55deg) rotateZ(-10deg);
+    }
+    to {
+      transform: rotateY(70deg) rotateZ(-10deg);
+    }
+  }
+  @keyframes glow {
+    from {
+      opacity: 0;
+    }
+    20% {
+      opacity: 1;
+    }
+    45% {
+      transform: rotate(-25deg);
+    }
+    75% {
+      transform: rotate(5deg);
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  
