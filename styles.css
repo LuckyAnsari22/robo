@@ -64,7 +64,7 @@ body {
 .loading-text {
   position: relative;
   font-size: 1em;
-    bottom: -300px;
+    bottom: -400px;
     left: -700px;
   color: #f4f4f4;
   font-weight: bold;
